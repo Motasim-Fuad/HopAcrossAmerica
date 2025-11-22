@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/eventAdminDigitalPassView.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/eventAdmin_digital_passport_list_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminHomeView/home/eventAdminHomeView.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminProfileView/eventAdminProfileView.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminQRView/eventAdminQRView.dart';
@@ -13,7 +13,7 @@ class Eventadminbtmnavview extends StatelessWidget {
 
   final List<Widget> pages = [
     Eventadminhomeview(),
-    Eventadmindigitalpassview(),
+    EventAdminDigitalPassportListView(),
     Eventadminqrview(),
     Eventadminrequestsview(),
     Eventadminprofileview(),

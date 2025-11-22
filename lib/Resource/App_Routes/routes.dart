@@ -7,6 +7,10 @@ import 'package:hopacrossamerica/View/AuthenticationView/forget_password/forgot_
 import 'package:hopacrossamerica/View/AuthenticationView/forget_password/reset_password_View.dart';
 import 'package:hopacrossamerica/View/SplashView/splash_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminBtmNavView.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/eventAdmin_digital_passport_list_view.dart' show EventAdminDigitalPassportListView;
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/eventAdmin_digital_passport_setup_view.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/event_Admin_digital_passport_shop_view.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/event_admin_digital_passport_preview_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminHomeView/add_shop/add_shop_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminHomeView/create_event/create_event_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminHomeView/edit_shop/edit_shop_view.dart';
@@ -15,6 +19,10 @@ import 'package:hopacrossamerica/View/shopperView/shopperBtmNavView.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/Authentication_Controller/forgot_password_controller/forgot_pass_otp_verify_controller.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/Authentication_Controller/forgot_password_controller/forgot_password_controller.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/Authentication_Controller/forgot_password_controller/reset_password_controller.dart';
+import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminDigitalPassController/eventAdmin_digital_passport_list_controller.dart';
+import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminDigitalPassController/eventAdmin_digital_passport_preview_controller.dart';
+import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminDigitalPassController/eventAdmin_digital_passport_setup_controller.dart';
+import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminDigitalPassController/eventAdmin_digital_passport_shop_controller.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminHomeController/eventAdminhome_controller.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminHomeController/event_admin_add_shop_controller.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminHomeController/event_admin_create_event_controller.dart';
@@ -97,5 +105,36 @@ class AppRouts {
         Get.lazyPut(() => EventadminhomeController());
       }),
     ),
+
+    GetPage(
+      name: RouteName.digitalPassportListView,
+      page: () => EventAdminDigitalPassportListView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut(() => EventAdminDigitalPassportListController());
+      }),
+    ),
+    GetPage(
+      name: RouteName.digitalPassportSetupView,
+      page: () => EventAdminDigitalPassportSetupView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut(() => EventAdminDigitalPassportSetupController());
+      }),
+    ),
+    GetPage(
+      name: RouteName.digitalPassportShopView,
+      page: () => EventAdminDigitalPassportShopView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut(() => EventAdminDigitalPassportShopController());
+      }),
+    ),
+    GetPage(
+      name: RouteName.digitalPassportPreviewView,
+      page: () => EventAdminDigitalPassportPreviewView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut(() => EventAdminDigitalPassportPreviewController());
+      }),
+    ),
+
+
   ];
 }

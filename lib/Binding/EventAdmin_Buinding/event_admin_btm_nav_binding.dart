@@ -3,6 +3,7 @@
 
 import 'package:get/get.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminBtmNavController.dart';
+import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminDigitalPassController/eventAdmin_digital_passport_list_controller.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminHomeController/eventAdminhome_controller.dart';
 
 
@@ -11,5 +12,6 @@ class EventAdminBtmNavBinding extends Bindings {
   void dependencies() {
     Get.lazyPut(() => EventAdminBtmNavController());
     Get.lazyPut(() => EventadminhomeController(), fenix: true);
+    Get.lazyPut(() => EventAdminDigitalPassportListController());
   }
-}
+  }

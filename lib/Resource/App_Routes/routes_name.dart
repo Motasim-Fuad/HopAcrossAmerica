@@ -11,5 +11,9 @@ class RouteName{
   static const eventAdmin_addShopView = '/addShopView';
   static const eventAdmin_createEventView = '/createEventView';
   static const eventAdmin_eventAdminHomeView = '/eventAdmin__eventAdminHomeView';
+  static const String digitalPassportListView = '/digital_passport_list';
+  static const String digitalPassportSetupView = '/digital_passport_setup';
+  static const String digitalPassportShopView = '/digital_passport_shop';
+  static const String digitalPassportPreviewView = '/digital_passport_preview';
 
 }
