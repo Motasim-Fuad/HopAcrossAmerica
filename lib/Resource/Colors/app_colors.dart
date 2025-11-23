@@ -16,8 +16,8 @@ class AppColor{
 
   // Gradient color combinations
   static const List<Color> readGradient = [
-    Color(0xffFF6B7A),
-    Color(0xffFC3F58),
+    Color(0xffda7983),
+    Color(0xff7e0417),
   ];
 
   static const List<Color> warmGradient = [
@@ -26,8 +26,12 @@ class AppColor{
   ];
 
   static const List<Color> blueGradient = [
-    Color(0xff7FB3FF),
-    Color(0xff4A90E2),
+    Color(0xffa6c5e8),
+    Color(0xff0e4795),
+  ];
+static const List<Color> greenGradient = [
+  Color(0xa87cc683),
+  Color(0xff09af23),
   ];
 
   static const List<Color> primaryGradient = [

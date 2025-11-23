@@ -1,13 +1,17 @@
-
 import 'package:get/get.dart';
 import 'package:hopacrossamerica/Binding/EventAdmin_Buinding/event_admin_btm_nav_binding.dart';
+import 'package:hopacrossamerica/Binding/EventAdmin_Buinding/profile/ProfileBinding.dart';
+import 'package:hopacrossamerica/Binding/EventAdmin_Buinding/profile/event.dart';
+import 'package:hopacrossamerica/Binding/EventAdmin_Buinding/profile/settings.dart';
+import 'package:hopacrossamerica/Binding/EventAdmin_Buinding/profile/shop.dart';
 import 'package:hopacrossamerica/View/AuthenticationView/auth_view.dart';
 import 'package:hopacrossamerica/View/AuthenticationView/forget_password/forgot_pass_otp_verify_View.dart';
 import 'package:hopacrossamerica/View/AuthenticationView/forget_password/forgot_password_screen.dart';
 import 'package:hopacrossamerica/View/AuthenticationView/forget_password/reset_password_View.dart';
 import 'package:hopacrossamerica/View/SplashView/splash_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminBtmNavView.dart';
-import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/eventAdmin_digital_passport_list_view.dart' show EventAdminDigitalPassportListView;
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/eventAdmin_digital_passport_list_view.dart'
+    show EventAdminDigitalPassportListView;
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/eventAdmin_digital_passport_setup_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/event_Admin_digital_passport_shop_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminDigitalPassView/event_admin_digital_passport_preview_view.dart';
@@ -15,6 +19,13 @@ import 'package:hopacrossamerica/View/eventAdminView/eventAdminHomeView/add_shop
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminHomeView/create_event/create_event_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminHomeView/edit_shop/edit_shop_view.dart';
 import 'package:hopacrossamerica/View/eventAdminView/eventAdminHomeView/home/eventAdminHomeView.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminProfileView/Screen/AboutView.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminProfileView/Screen/editProfile.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminProfileView/Screen/eventView.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminProfileView/Screen/settings.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminProfileView/Screen/shop_view.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminProfileView/Screen/terms.dart';
+import 'package:hopacrossamerica/View/eventAdminView/eventAdminProfileView/eventAdminProfileView.dart';
 import 'package:hopacrossamerica/View/shopperView/shopperBtmNavView.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/Authentication_Controller/forgot_password_controller/forgot_pass_otp_verify_controller.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/Authentication_Controller/forgot_password_controller/forgot_password_controller.dart';
@@ -28,21 +39,19 @@ import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/event
 import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminHomeController/event_admin_create_event_controller.dart';
 import 'package:hopacrossamerica/ViewModel/Controller/eventAdminController/eventAdminHomeController/event_admin_edit_shop_controller.dart';
 
+import '../../View/eventAdminView/eventAdminProfileView/Screen/PrivacyView.dart' show PrivacyView;
 import 'routes_name.dart';
 
 class AppRouts {
-  static approutes ()=>[
+  static approutes() => [
     GetPage(
       name: RouteName.splashScreen,
-      page: ()=> SplashView(),
+      page: () => SplashView(),
       transition: Transition.fadeIn,
       transitionDuration: Duration(microseconds: 250),
     ),
 
-    GetPage(
-      name: RouteName.auth,
-      page: () => AuthView(),
-    ),
+    GetPage(name: RouteName.auth, page: () => AuthView()),
     GetPage(
       name: RouteName.forgotPassword,
       page: () => const ForgotPasswordScreen(),
@@ -64,43 +73,38 @@ class AppRouts {
         Get.lazyPut(() => ResetPasswordController());
       }),
     ),
-    GetPage(
-      name: RouteName.shopperBtmNavView,
-      page: () =>  ShopperBtmNavView(),
-
-    ),
+    GetPage(name: RouteName.shopperBtmNavView, page: () => ShopperBtmNavView()),
 
     GetPage(
       name: RouteName.eventAdminBtmNavView,
-      page: () =>  Eventadminbtmnavview(),
+      page: () => Eventadminbtmnavview(),
       binding: EventAdminBtmNavBinding(),
     ),
 
-
     GetPage(
       name: RouteName.eventAdmin_editShopView,
-      page: () =>  EditShopView(),
+      page: () => EditShopView(),
       binding: BindingsBuilder(() {
         Get.lazyPut(() => EventAdminEditShopController());
       }),
     ),
     GetPage(
       name: RouteName.eventAdmin_addShopView,
-      page: () =>  AddShopView(),
+      page: () => AddShopView(),
       binding: BindingsBuilder(() {
         Get.lazyPut(() => EventAdminAddShopController());
       }),
     ),
     GetPage(
       name: RouteName.eventAdmin_createEventView,
-      page: () =>  CreateEventView(),
+      page: () => CreateEventView(),
       binding: BindingsBuilder(() {
         Get.lazyPut(() => EventAdminCreateEventController());
       }),
     ),
     GetPage(
       name: RouteName.eventAdmin_eventAdminHomeView,
-      page: () =>  Eventadminhomeview(),
+      page: () => Eventadminhomeview(),
       binding: BindingsBuilder(() {
         Get.lazyPut(() => EventadminhomeController());
       }),
@@ -135,6 +139,33 @@ class AppRouts {
       }),
     ),
 
-
+    GetPage(
+      name: RouteName.shops,
+      page: () => ShopsView(),
+      binding: ShopsBinding(),
+    ),
+    GetPage(
+      name: RouteName.events,
+      page: () => EventsView(),
+      binding: EventsBinding(),
+    ),
+    GetPage(
+      name: RouteName.profile,
+      page: () => Eventadminprofileview(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: RouteName.editProfile,
+      page: () => EditProfileView(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: RouteName.settings,
+      page: () => SettingsView(),
+      binding: SettingsBinding(),
+    ),
+    GetPage(name: RouteName.about, page: () => AboutView()),
+    GetPage(name: RouteName.privacy, page: () => PrivacyView()),
+    GetPage(name: RouteName.terms, page: () => TermsView()),
   ];
 }

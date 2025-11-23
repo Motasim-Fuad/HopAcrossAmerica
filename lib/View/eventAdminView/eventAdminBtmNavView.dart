@@ -15,7 +15,7 @@ class Eventadminbtmnavview extends StatelessWidget {
     Eventadminhomeview(),
     EventAdminDigitalPassportListView(),
     Eventadminqrview(),
-    Eventadminrequestsview(),
+    EventadminrequestsEventListView(),
     Eventadminprofileview(),
   ];
 

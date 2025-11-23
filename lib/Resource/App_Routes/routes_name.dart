@@ -15,5 +15,12 @@ class RouteName{
   static const String digitalPassportSetupView = '/digital_passport_setup';
   static const String digitalPassportShopView = '/digital_passport_shop';
   static const String digitalPassportPreviewView = '/digital_passport_preview';
-
+  static const shops = '/shops';
+  static const events = '/events';
+  static const profile = '/profile';
+  static const editProfile = '/edit-profile';
+  static const settings = '/settings';
+  static const about = '/about';
+  static const privacy = '/privacy';
+  static const terms = '/terms';
 }
